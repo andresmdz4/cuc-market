@@ -85,7 +85,7 @@ function Register() {
       // REQUEST
       const { data } = await axios.post(
 
-        "http://localhost:5000/api/auth/register",
+        "https://cuc-market.onrender.com/api/auth/register",
 
         {
           name,

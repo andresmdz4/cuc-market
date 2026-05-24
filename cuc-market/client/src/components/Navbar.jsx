@@ -144,7 +144,7 @@ const updateProfileHandler =
       const { data } =
         await axios.put(
 
-          "http://localhost:5000/api/auth/profile",
+          "https://cuc-market.onrender.com/api/auth/profile",
 
           {
             name: editName,
@@ -251,7 +251,7 @@ const changePasswordHandler =
 
       await axios.put(
 
-        "http://localhost:5000/api/auth/password",
+        "https://cuc-market.onrender.com/api/auth/password",
 
         {
           currentPassword,
@@ -305,7 +305,7 @@ const deleteAccountHandler =
 
       await axios.delete(
 
-        "http://localhost:5000/api/auth/delete",
+        "https://cuc-market.onrender.com/api/auth/delete",
 
         {
 
@@ -358,7 +358,7 @@ const deleteAccountHandler =
 
       const { data } =
         await axios.get(
-          "http://localhost:5000/api/products"
+          "https://cuc-market.onrender.com/api/products"
         )
 
       setProducts(data)
@@ -699,7 +699,7 @@ useEffect(() => {
                     >
 
                       <img
-                        src={`http://localhost:5000/${product.image}`}
+                        src={`https://cuc-market.onrender.com/${product.image}`}
                         alt={product.name}
                         className="
                         w-14
@@ -1331,7 +1331,7 @@ useEffect(() => {
                 >
 
                   <img
-                    src={`http://localhost:5000/${product.image}`}
+                    src={`https://cuc-market.onrender.com/${product.image}`}
                     alt={product.name}
                     className="
                     w-12

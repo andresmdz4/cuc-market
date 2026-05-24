@@ -40,7 +40,7 @@ function Login() {
 
       const { data } = await axios.post(
 
-        "http://localhost:5000/api/auth/login",
+        "https://cuc-market.onrender.com/api/auth/login",
 
         {
           email,

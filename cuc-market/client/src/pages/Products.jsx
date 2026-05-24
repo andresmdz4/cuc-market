@@ -55,7 +55,7 @@ function Products() {
       const { data } =
         await axios.get(
 
-          "http://localhost:5000/api/products"
+          "https://cuc-market.onrender.com/api/products"
 
         )
 
@@ -95,7 +95,7 @@ function Products() {
 
       await axios.delete(
 
-        `http://localhost:5000/api/products/${selectedProduct}`
+        `https://cuc-market.onrender.com/api/products/${selectedProduct}`
 
       )
 
@@ -136,7 +136,7 @@ function Products() {
       const { data } =
         await axios.put(
 
-          `http://localhost:5000/api/products/${productId}/like`,
+          `https://cuc-market.onrender.com/api/products/${productId}/like`,
 
           { userId }
 
@@ -601,7 +601,7 @@ function Products() {
 
                     {/* IMAGE */}
                     <img
-                      src={`http://localhost:5000/${product.image}`}
+                      src={`https://cuc-market.onrender.com/${product.image}`}
                       alt={product.name}
                       className="
                       w-full

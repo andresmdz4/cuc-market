@@ -23,7 +23,7 @@ function ProductDetail() {
         const { data } =
           await axios.get(
 
-            `http://localhost:5000/api/products/${id}`
+            `https://cuc-market.onrender.com/api/products/${id}`
 
           )
 
@@ -110,7 +110,7 @@ function ProductDetail() {
           ">
 
             <img
-              src={`http://localhost:5000/${product.image}`}
+              src={`https://cuc-market.onrender.com/${product.image}`}
               alt={product.name}
               className="
               w-full

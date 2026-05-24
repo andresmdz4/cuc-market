@@ -29,7 +29,7 @@ function Admin() {
       try {
 
         await axios.delete(
-          `http://localhost:5000/api/admin/product/${id}`
+          `https://cuc-market.onrender.com/api/admin/product/${id}`
         )
 
         setProducts(
@@ -58,13 +58,13 @@ function Admin() {
         // USERS
         const usersRes =
           await axios.get(
-            "http://localhost:5000/api/admin/users"
+            "https://cuc-market.onrender.com/api/admin/users"
           )
 
         // PRODUCTS
         const productsRes =
           await axios.get(
-            "http://localhost:5000/api/admin/products"
+            "https://cuc-market.onrender.com/api/admin/products"
           )
 
         setUsers(usersRes.data)
@@ -230,7 +230,7 @@ function Admin() {
               >
 
                 <img
-                  src={`http://localhost:5000/${product.image}`}
+                  src={`https://cuc-market.onrender.com/${product.image}`}
                   alt={product.name}
                   className="
                   w-full

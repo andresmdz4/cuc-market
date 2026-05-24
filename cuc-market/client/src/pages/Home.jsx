@@ -23,7 +23,7 @@ function Home() {
     try {
 
       const { data } = await axios.get(
-        "http://localhost:5000/api/products"
+        "https://cuc-market.onrender.com/api/products"
       )
 
       // CAMBIO
@@ -600,7 +600,7 @@ function Home() {
 
                     {/* IMAGE */}
                     <img
-                      src={`http://localhost:5000/${product.image}`}
+                      src={`https://cuc-market.onrender.com/${product.image}`}
                       alt={product.name}
                       className="
                       w-full

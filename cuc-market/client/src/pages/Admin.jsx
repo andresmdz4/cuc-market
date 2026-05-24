@@ -14,6 +14,10 @@ function Admin() {
 
   const [products, setProducts] =
     useState([])
+  
+  const userInfo = JSON.parse(
+  localStorage.getItem("userInfo")
+)
 
   // DELETE PRODUCT
   const deleteProductHandler =
@@ -57,9 +61,22 @@ function Admin() {
 
         // USERS
         const usersRes =
-          await axios.get(
-            "https://cuc-market.onrender.com/api/admin/users"
-          )
+  await axios.get(
+
+    "https://cuc-market.onrender.com/api/admin/users",
+
+    {
+
+      headers: {
+
+        Authorization:
+          `Bearer ${userInfo.token}`
+
+      }
+
+    }
+
+  )
 
         // PRODUCTS
         const productsRes =

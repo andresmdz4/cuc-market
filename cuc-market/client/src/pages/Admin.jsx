@@ -49,6 +49,8 @@ function Admin() {
 
 )
 
+
+
         setProducts(
 
           products.filter(
@@ -65,6 +67,52 @@ function Admin() {
       }
 
     }
+const deleteUserHandler =
+  async (id) => {
+
+    const confirmDelete =
+      window.confirm(
+        "¿Eliminar usuario?"
+      )
+
+    if (!confirmDelete) return
+
+    try {
+
+      await axios.delete(
+
+        `https://cuc-market.onrender.com/api/admin/user/${id}`,
+
+        {
+
+          headers: {
+
+            Authorization:
+              `Bearer ${userInfo?.token}`
+
+          }
+
+        }
+
+      )
+
+      setUsers(
+
+        users.filter(
+          (user) =>
+            user._id !== id
+        )
+
+      )
+
+    } catch (error) {
+
+      console.log(error)
+
+    }
+
+  }
+
 
   useEffect(() => {
 
@@ -224,6 +272,29 @@ function Admin() {
                     : "USER"}
 
                 </span>
+                <button
+  onClick={() =>
+    deleteUserHandler(
+      user._id
+    )
+  }
+  className="
+  mt-3
+  bg-red-500
+  hover:bg-red-600
+  transition
+  text-white
+  px-4
+  py-2
+  rounded-2xl
+  font-bold
+  text-sm
+  "
+>
+
+  Eliminar
+
+</button>
 
               </div>
 

@@ -199,7 +199,7 @@ function AddProduct() {
 
       await axios.post(
 
-        "http://localhost:5000/api/products",
+        "https://cuc-market.onrender.com/api/products",
 
         formData,
 

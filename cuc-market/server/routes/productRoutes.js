@@ -1,8 +1,7 @@
 import express from "express"
-import upload from "../middleware/uploadMiddleware.js"
-
 import Product from "../models/Product.js"
-
+import upload from "../middleware/uploadMiddleware.js"
+import cloudinary from "../config/cloudinary.js"
 const router = express.Router()
 
 // CREATE PRODUCT
@@ -66,7 +65,24 @@ router.post(
         })
 
       }
+const base64 =
+  Buffer.from(
+    req.file.buffer
+  ).toString("base64")
 
+const dataURI =
+  `data:${req.file.mimetype};base64,${base64}`
+
+const uploadedImage =
+  await cloudinary.uploader.upload(
+    dataURI,
+    {
+
+      folder:
+        "cuc-market"
+
+    }
+  )
       // CREATE
       const product = await Product.create({
 
@@ -86,7 +102,7 @@ router.post(
 
         instagram,
 
-        image: req.file.path
+        image: uploadedImage.secure_url
 
       })
 
@@ -94,15 +110,22 @@ router.post(
 
     } catch (error) {
 
-      console.log(error)
+  console.log(
+    "ERROR COMPLETO:"
+  )
 
-      res.status(500).json({
+  console.log(error)
 
-        message: "Error creando producto"
+  return res.status(500).json({
 
-      })
+    message:
+      error.message ||
 
-    }
+      "Error creando producto"
+
+  })
+
+}
 
   }
 

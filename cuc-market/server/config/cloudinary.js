@@ -1,5 +1,12 @@
+import "dotenv/config"
+
 import { v2 as cloudinary }
 from "cloudinary"
+
+console.log(
+  "CLOUDINARY:",
+  process.env.CLOUDINARY_NAME
+)
 
 cloudinary.config({
 
@@ -10,7 +17,9 @@ cloudinary.config({
     process.env.CLOUDINARY_KEY,
 
   api_secret:
-    process.env.CLOUDINARY_SECRET
+    process.env.CLOUDINARY_SECRET,
+
+  secure: true
 
 })
 

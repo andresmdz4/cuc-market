@@ -699,7 +699,7 @@ useEffect(() => {
                     >
 
                       <img
-                        src={`https://cuc-market.onrender.com/${product.image}`}
+                        src={product.image}
                         alt={product.name}
                         className="
                         w-14
@@ -1331,7 +1331,7 @@ useEffect(() => {
                 >
 
                   <img
-                    src={`https://cuc-market.onrender.com/${product.image}`}
+                    src={product.image}
                     alt={product.name}
                     className="
                     w-12

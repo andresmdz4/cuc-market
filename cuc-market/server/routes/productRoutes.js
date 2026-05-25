@@ -1,36 +1,9 @@
 import express from "express"
-import multer from "multer"
+import upload from "../middleware/uploadMiddleware.js"
 
 import Product from "../models/Product.js"
 
 const router = express.Router()
-
-// STORAGE
-const storage = multer.diskStorage({
-
-  destination(req, file, cb) {
-
-    cb(null, "uploads/")
-
-  },
-
-  filename(req, file, cb) {
-
-    cb(
-      null,
-      `${Date.now()}-${file.originalname}`
-    )
-
-  }
-
-})
-
-// UPLOAD
-const upload = multer({
-
-  storage
-
-})
 
 // CREATE PRODUCT
 router.post(

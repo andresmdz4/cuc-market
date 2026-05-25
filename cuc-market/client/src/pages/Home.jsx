@@ -599,16 +599,25 @@ function Home() {
                   >
 
                     {/* IMAGE */}
-                    <img
-                      src={`https://cuc-market.onrender.com/${product.image}`}
-                      alt={product.name}
-                      className="
-                      w-full
-                      aspect-[4/3]
-                      object-cover
-                      object-top
-                      "
-                    />
+                    <div className="
+w-full
+h-64
+overflow-hidden
+rounded-t-[32px]
+bg-gray-100
+">
+
+  <img
+    src={product.image}
+    alt={product.name}
+    className="
+    w-full
+    h-full
+    object-cover
+    "
+  />
+
+</div>
 
                     {/* CONTENT */}
                     <div className="

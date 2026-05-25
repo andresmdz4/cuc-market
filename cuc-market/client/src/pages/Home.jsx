@@ -570,7 +570,9 @@ function Home() {
             ">
 
               {/* CAMBIO */}
-              {filteredProducts.map((product) => (
+              {filteredProducts
+  .slice(0, 4)
+  .map((product) => (
 
                 <div
                   key={product._id}

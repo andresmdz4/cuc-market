@@ -263,23 +263,23 @@ function Products() {
         <Navbar />
 
         {/* CONTENT */}
-        <section className="
-        px-3
-        md:px-10
-        py-5
-        md:py-8
-        ">
+<section className="
+px-3
+md:px-10
+py-5
+md:py-8
+">
 
-          {/* TOP */}
-          <div className="
-          flex
-          flex-col
-          gap-4
-          mb-6
-          ">
+  {/* TOP */}
+  <div className="
+  flex
+  flex-col
+  gap-4
+  mb-6
+  ">
 
-            {/* TITLE */}
-            <div>
+    {/* TITLE */}
+    <div>
 
               <div className="
               flex
@@ -330,14 +330,14 @@ function Products() {
 
             </div>
 
-            {/* FILTERS */}
-            <div className="
-            flex
-            gap-2
-            overflow-x-auto
-            scrollbar-hide
-            pb-1
-            ">
+                      {/* FILTERS */}
+           <div className="
+           flex
+           gap-2
+           pb-1
+           relative
+           z-50
+           ">
 
               {/* CATEGORY */}
               <div className="
@@ -346,11 +346,15 @@ function Products() {
               ">
 
                 <button
-                  onClick={() =>
-                    setShowCategoryMenu(
-                      !showCategoryMenu
-                    )
-                  }
+                  onClick={() => {
+
+  setShowCategoryMenu(
+    !showCategoryMenu
+  )
+
+  setShowSortMenu(false)
+
+}}
                   className="
                   bg-white
                   border
@@ -380,19 +384,17 @@ function Products() {
 
                 {showCategoryMenu && (
 
-                  <div className="
-                  absolute
-                  top-12
-                  left-0
-                  w-44
-                  bg-white
-                  rounded-2xl
-                  shadow-2xl
-                  border
-                  border-gray-100
-                  overflow-hidden
-                  z-50
-                  ">
+                 <div className="
+absolute
+top-12
+left-0
+w-44
+bg-white
+rounded-3xl
+shadow-lg
+border
+border-gray-200
+">
 
                     {[
                       "Todos",
@@ -448,11 +450,15 @@ function Products() {
               ">
 
                 <button
-                  onClick={() =>
-                    setShowSortMenu(
-                      !showSortMenu
-                    )
-                  }
+                  onClick={() => {
+
+  setShowSortMenu(
+    !showSortMenu
+  )
+
+  setShowCategoryMenu(false)
+
+}}
                   className="
                   bg-white
                   border
@@ -493,7 +499,7 @@ function Products() {
                   border
                   border-gray-100
                   overflow-hidden
-                  z-50
+                  z-999
                   ">
 
                     {[

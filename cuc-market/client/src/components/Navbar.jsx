@@ -555,7 +555,7 @@ useEffect(() => {
       <header className="
       sticky
       top-0
-      z-50
+      z-40
       bg-white/80
       backdrop-blur-xl
       border-b

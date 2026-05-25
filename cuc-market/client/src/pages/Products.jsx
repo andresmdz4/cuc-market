@@ -257,6 +257,8 @@ function Products() {
       <div className="
       min-h-screen
       bg-[#f5f5f7]
+      relative
+      z-0
       ">
 
         {/* NAVBAR */}
@@ -332,12 +334,13 @@ md:py-8
 
                       {/* FILTERS */}
            <div className="
-           flex
-           gap-2
-           pb-1
-           relative
-           z-50
-           ">
+flex
+flex-wrap
+gap-2
+pb-2
+relative
+z-10
+">
 
               {/* CATEGORY */}
               <div className="

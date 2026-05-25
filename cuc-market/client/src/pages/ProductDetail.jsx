@@ -112,13 +112,14 @@ function ProductDetail() {
             <img
               src={product.image}
               alt={product.name}
-              className="
-              w-full
-              aspect-[4/3]
-              lg:h-full
-              object-cover
-              object-top
-              "
+className="
+w-full
+h-full
+min-h-[320px]
+md:min-h-[500px]
+object-cover
+object-center
+"
             />
 
           </div>

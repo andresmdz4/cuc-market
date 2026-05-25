@@ -33,8 +33,21 @@ function Admin() {
       try {
 
         await axios.delete(
-          `https://cuc-market.onrender.com/api/admin/product/${id}`
-        )
+
+  `https://cuc-market.onrender.com/api/admin/product/${id}`,
+
+  {
+
+    headers: {
+
+      Authorization:
+        `Bearer ${userInfo?.token}`
+
+    }
+
+  }
+
+)
 
         setProducts(
 
@@ -78,11 +91,23 @@ function Admin() {
 
   )
 
-        // PRODUCTS
         const productsRes =
-          await axios.get(
-            "https://cuc-market.onrender.com/api/admin/products"
-          )
+  await axios.get(
+
+    "https://cuc-market.onrender.com/api/admin/products",
+
+    {
+
+      headers: {
+
+        Authorization:
+          `Bearer ${userInfo?.token}`
+
+      }
+
+    }
+
+  )
 
         setUsers(usersRes.data)
         setProducts(productsRes.data)
